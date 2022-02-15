@@ -60,9 +60,6 @@ app.get("/homepage", (req, res) => {
 const userRoute = require("./routes/user");
 app.use("/user", userRoute);
 
-const quickTaskRoute = require("./routes/quick_task");
-app.use("/quickTask", quickTaskRoute);
-
 const accountabilityTeamRoute = require("./routes/accountability_team");
 app.use("/accountabilityTeam", accountabilityTeamRoute);
 // const userQuickTaskRoute = require("./routes/user_quick_task");
@@ -74,34 +71,9 @@ app.use("/inspireChat", inspireChatRoute);
 const goalRoute = require("./routes/goal");
 app.use("/goal", goalRoute);
 
-const smallGoalRoute = require("./routes/small_goals");
-app.use("/smallGoal", smallGoalRoute);
-
-const groupGoalRoute = require("./routes/group_goals");
-app.use("/groupGoal", groupGoalRoute);
-
 const crudOpRoute = require("./routes/crud_op/crud_op");
 app.use("/crudOp", crudOpRoute);
 
-const appUrlRoute = require("./routes/app_url");
-app.use("/appUrl", appUrlRoute);
-
 const reportedMsgRoute = require("./routes/reported");
 app.use("/reportPost", reportedMsgRoute);
-
-const mongoBulkWrite = require("./routes/v2/mongo_bulk_write_testing");
-app.use("/mongoBulkWrite", mongoBulkWrite);
-
-const ac_group = require("./routes/v2/v2_ac_group");
-app.use("/ac_group", ac_group);
-
-const v2_goals = require("./routes/v2/v2_goals");
-app.use("/v2_goals", v2_goals);
-
-const v2_posts = require("./routes/v2/v2_posts");
-app.use("/v2_posts", v2_posts);
-
-const v2_users = require("./routes/v2/v2_users");
-app.use("/v2_users", v2_users);
-
 module.exports.db = db;

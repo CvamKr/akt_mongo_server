@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const UserModel = require("../models/user_model");
 const db = require("../server");
 // const ObjectId = require("mongodb").ObjectID;
 const ObjectId = require("mongodb").ObjectID;
@@ -196,25 +195,6 @@ router.put("/updateAccoutabilityTeamStatus/:id", async (req, res) => {
   }
 });
 
-router.post("/create100Users", async (req, res) => {
-  for (let i = 1001; i < 1006; i++) {
-    console.log(`i = ${i}`);
-    const user = new UserModel({
-      username: `user ${i}`,
 
-      accountabilityTeam: "",
-    });
-
-    try {
-      // let newUser =
-      await user.save();
-      // res.json(newUser);
-      console.log(`user created is ${i}`);
-    } catch (error) {
-      res.status(400).json({ msg: error });
-    }
-  }
-  // res.json({ msg: "new users created!" });
-});
 
 module.exports = router;
